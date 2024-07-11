@@ -236,4 +236,34 @@ function sixBox() {
 
 </body>
 </html>
+
+
+
+<!--------------------------------------------------------------------->
+<input type="button" id="downloadBtn" value="Download">
+
+<script>
+  function downloadImage() {
+
+// Grab the canvas element
+let canvas = document.getElementById("canvas");
+
+/* Create a PNG image of the pixels drawn on the canvas using the toDataURL method. PNG is the preferred format since it is supported by all browsers
+*/
+var dataURL = canvas.toDataURL("image/png");
+
+// Create a dummy link text
+var a = document.createElement('a');
+// Set the link to the image so that when clicked, the image begins downloading
+a.href = dataURL
+// Specify the image filename
+a.download = 'canvas-download.jpeg';
+// Click on the link to set off download
+a.click();
+}
+</script>
+<script>
+  let download = document.getElementById('downloadBtn')
+  download.addEventListener('click', downloadImage)
+</script>
 <!--------------------------------------------------------------------->
