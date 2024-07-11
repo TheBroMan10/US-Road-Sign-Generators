@@ -1,0 +1,77 @@
+<!--Canvas API Importer-->
+<html lang="en">
+  <body>
+    <canvas id="canvas" width="1440" height="1108"></canvas>
+  </body>
+</html>
+<!--------------------------------------------------------------------->
+<!--Overpass Font Importer-->
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass">
+<style>
+body {
+  font-family: "Overpass", sans-serif;
+}
+</style>
+</head>
+<!--------------------------------------------------------------------->
+<!--Canvas Image Printer-->
+<script>
+  function draw() {
+    const ctx = document.getElementById("canvas").getContext("2d");
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0);
+      ctx.beginPath();
+      ctx.moveTo(30, 96);
+      ctx.stroke();
+    };
+    img.src = "../assets/small03_border.png";
+  }
+  
+  draw();
+  </script>
+<!--------------------------------------------------------------------->
+<!--Cavas Background Printer-->
+<script>
+  function draw() {
+  const canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "rgb(0 90 156)";
+
+    ctx.fillRect(0, 0, 1440, 1108);
+  }
+}
+
+draw();
+</script>
+<!--------------------------------------------------------------------->
+<p></p>
+<!--Text Input-->
+<html>
+<body>
+
+<input type="text" id="signText" value="Food - Exit 214">
+
+<button onclick="printSignText()">Submit</button>
+<script>
+function printSignText() {
+  var x = document.getElementById("signText").value;
+//Canvas Text Printer
+  function draw() {
+    const ctx = document.getElementById("canvas").getContext("2d");
+    ctx.font = "bold 150px Overpass";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText(document.getElementById("canvas").innerHTML = x, 720, 150);
+  }
+  
+  draw();
+}
+////////////////////////
+</script>
+
+</body>
+</html>
+<!--------------------------------------------------------------------->
