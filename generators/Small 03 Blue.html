@@ -68,8 +68,170 @@ function printSignText() {
   }
   
   draw();
+  ////////////////////////
 }
-////////////////////////
+</script>
+
+</body>
+</html>
+<!--------------------------------------------------------------------->
+<!--Top Left Box-->
+<html>
+<body>
+<input type="button" id="1b" onclick="oneBox()" value="Top Left Box">
+
+<script>
+function oneBox() {
+  var x = document.getElementById("1b").value;
+  function draw() {
+    const ctx = document.getElementById("canvas").getContext("2d");
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 75, 299);
+      ctx.beginPath();
+      ctx.moveTo(30, 96);
+      ctx.stroke();
+    };
+    img.src = "../assets/small03_icon_border.png";
+  }
+  
+  draw();
+}
+</script>
+
+</body>
+</html>
+<!--------------------------------------------------------------------->
+<!--Bottom Left Box-->
+<html>
+<body>
+<input type="button" id="1b" onclick="twoBox()" value="Bottom Left Box">
+
+<script>
+function twoBox() {
+  var x = document.getElementById("1b").value;
+  function draw() {
+    const ctx = document.getElementById("canvas").getContext("2d");
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 75, 654);
+      ctx.beginPath();
+      ctx.moveTo(30, 96);
+      ctx.stroke();
+    };
+    img.src = "../assets/small03_icon_border.png";
+  }
+  
+  draw();
+}
+</script>
+
+</body>
+</html>
+<!--------------------------------------------------------------------->
+<!--Top Center Box-->
+<html>
+<body>
+<input type="button" id="1b" onclick="threeBox()" value="Top Center Box">
+
+<script>
+function threeBox() {
+  var x = document.getElementById("1b").value;
+  function draw() {
+    const ctx = document.getElementById("canvas").getContext("2d");
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 530, 299);
+      ctx.beginPath();
+      ctx.moveTo(30, 96);
+      ctx.stroke();
+    };
+    img.src = "../assets/small03_icon_border.png";
+  }
+  
+  draw();
+}
+</script>
+
+</body>
+</html>
+<!--------------------------------------------------------------------->
+<!--Bottom Center Box-->
+<html>
+<body>
+<input type="button" id="1b" onclick="fourBox()" value="Bottom Center Box">
+
+<script>
+function fourBox() {
+  var x = document.getElementById("1b").value;
+  function draw() {
+    const ctx = document.getElementById("canvas").getContext("2d");
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 530, 654);
+      ctx.beginPath();
+      ctx.moveTo(30, 96);
+      ctx.stroke();
+    };
+    img.src = "../assets/small03_icon_border.png";
+  }
+  
+  draw();
+}
+</script>
+
+</body>
+</html>
+<!--------------------------------------------------------------------->
+<!--Top Right Box-->
+<html>
+<body>
+<input type="button" id="1b" onclick="fiveBox()" value="Top Right Box">
+
+<script>
+function fiveBox() {
+  var x = document.getElementById("1b").value;
+  function draw() {
+    const ctx = document.getElementById("canvas").getContext("2d");
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 985, 299);
+      ctx.beginPath();
+      ctx.moveTo(30, 96);
+      ctx.stroke();
+    };
+    img.src = "../assets/small03_icon_border.png";
+  }
+  
+  draw();
+}
+</script>
+
+</body>
+</html>
+<!--------------------------------------------------------------------->
+<!--Bottom Right Box-->
+<html>
+<body>
+<input type="button" id="1b" onclick="sixBox()" value="Bottom Right Box">
+
+<script>
+function sixBox() {
+  var x = document.getElementById("1b").value;
+  function draw() {
+    const ctx = document.getElementById("canvas").getContext("2d");
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 985, 654);
+      ctx.beginPath();
+      ctx.moveTo(30, 96);
+      ctx.stroke();
+    };
+    img.src = "../assets/small03_icon_border.png";
+  }
+  
+  draw();
+}
 </script>
 
 </body>
