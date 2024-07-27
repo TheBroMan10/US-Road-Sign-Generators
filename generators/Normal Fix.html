@@ -14,12 +14,11 @@
     </style>
 </head>
 <body>
-<h1>Javascript - invert the colors of a picture on a canvas</h1>
 <input id="inp" type='file' accept='image/*' capture='camera'/>
 <a id='lnk' download>Save the img</a>
 <img id="img" />
 
-<canvas id="can" width="200" height="200">
+<canvas id="can" width="4096" height="4096">
 
 <script type="text/javascript">
     const input = document.querySelector('#inp')
@@ -36,10 +35,10 @@
     let reverseColors = ({data}) => {
         console.log(data)
         for (i = 0; i < data.length; i += 4) {
-            data[i] = 255 - data[i];
-            data[i + 1] = 255 - data[i + 1];
-            data[i + 2] = 255 - data[i + 2];
-            data[i + 3] = 255;
+            data[i] = 255 - data[i]; 'Red 255 is full invert 0 is no invert'
+            data[i + 1] = 0 - data[i + 1]; 'Green 255 is full invert 0 is no invert'
+            data[i + 2] = 0 - data[i + 2]; 'Blue 255 is full invert 0 is no invert'
+            data[i + 3] = 0; 'Alpha 255 is full invert 0 is no invert'
         }
         return data
     }
