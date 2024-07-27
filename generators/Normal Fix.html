@@ -1,29 +1,56 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       img {
+            width: 200px;
+            height: auto;
+        }
+
+        input, a {
+            display: block;
+        }
+    </style>
+</head>
 <body>
-<h1>HTML5 Canvas</h1>
-<h2>The getImageData() Method</h2>
+<h1>Javascript - invert the colors of a picture on a canvas</h1>
+<input id="inp" type='file' accept='image/*' capture='camera'/>
+<a id='lnk' download>Save the img</a>
+<img id="img" />
 
-<img id="scream" src="./assets/arrow_top_left.png" alt="The Scream" width="220" height="277">
-<canvas id="myCanvas" width="512" height="512" style="border:1px solid grey"></canvas>
+<canvas id="can" width="200" height="200">
 
-<script>
-document.getElementById("scream").onload = function() {
-  const c = document.getElementById("myCanvas");
-  const ctx = c.getContext("2d");
-  const img = document.getElementById("scream");
-  ctx.drawImage(img, 0, 0);
-  const imgData = ctx.getImageData(0, 0, c.width, c.height);
-  
-  // invert colors
-  for (let i = 0; i < imgData.data.length; i += 4) {
-    imgData.data[i] = 255 - imgData.data[i];
-    imgData.data[i+1] = 255 - imgData.data[i+1];
-    imgData.data[i+2] = 255 - imgData.data[i+2];
-    imgData.data[i+3] = 255;
-  }
-  ctx.putImageData(imgData, 0, 0);
-};
+<script type="text/javascript">
+    const input = document.querySelector('#inp')
+    const img = document.querySelector('#img')
+    const link = document.querySelector('#lnk')
+    const canvas = document.querySelector('#can')
+    const ctx = canvas.getContext("2d")
+
+    input.addEventListener('change', () => {
+        const url = window.URL.createObjectURL(input.files[0])
+        img.src = url
+    })
+
+    let reverseColors = ({data}) => {
+        console.log(data)
+        for (i = 0; i < data.length; i += 4) {
+            data[i] = 255 - data[i];
+            data[i + 1] = 255 - data[i + 1];
+            data[i + 2] = 255 - data[i + 2];
+            data[i + 3] = 255;
+        }
+        return data
+    }
+
+    img.onload = ()=> {
+        ctx.drawImage(img, 0, 0)
+        const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+        imgData.data = reverseColors(imgData)
+        ctx.putImageData(imgData, 0, 0)
+        link.href = canvas.toDataURL()
+    }
 </script>
-
 </body>
 </html>
